@@ -1,0 +1,13 @@
+Package: CentEFWR
+Type: Package
+Title: Centile calculator based on estimated fetal weight growth charts
+Version: 0.1.0
+Authors@R: c(person("Adi Laurentiu", "Tarca", role = c("aut", "cre"),
+                     email = "atarca@med.wayne.edu"),
+             person("Gaurav", "Bhatti", role = c("aut"),
+                     email = "gbhatti@med.wayne.edu"))
+Description: This packages computes centiles for estimated fetal weight based on popular fetal growth standards.
+License: GPLv2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
