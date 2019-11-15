@@ -1,26 +1,30 @@
 # CentEFWR
 Percentile calculator based on estimated fetal weight growth charts.
 
-# Examples
-# Generate sample data with EFW
+# Example Usage
+
+# Input data without EFW
 data=data.frame(GA=c(240,210,266),wt=c(88,92,100),
 ht=c(165,165,170),parity=c(0,5,2),
 Sex=c("Male","Female",""),Race=c("Black","","Asian"),
 EFW=c(2000,2500,2600))
-# Compute the EFW centiles for the sample data
- CentEFWR(data)
 
- # Generate sample data without EFW
+CentEFWR(data)
+
+
+# Input data without EFW
 data=data.frame(GA=c(200,210,266),wt=c(88,92,100),
 ht=c(165,165,170),parity=c(0,5,2),
 Sex=c("Male","Female",""),Race=c("Black","","Asian"),
 AC=c(220,270,300),
 HC=c(250,290,320),
 FL=c(55,60,75))
-# Compute the EFW centiles for the sample data
- CentEFWR(data)
+
+CentEFWR(data)
  
-#References
+ 
+ 
+# References
 Tarca, A.L., et al., A new customized fetal growth standard for African American women: the PRB/NICHD Detroit study. Am J Obstet Gynecol, 2018. 218(2s): p. S679-S691.e4.
 
 Grantz, K.L., et al., Fetal growth standards: the NICHD fetal growth study approach in context with INTERGROWTH-21st and the World Health Organization Multicentre Growth Reference Study. Am J Obstet Gynecol, 2018. 218(2s): p. S641-S655.e28.
