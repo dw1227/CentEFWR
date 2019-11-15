@@ -71,8 +71,8 @@ CentEFWR<- function (data,saveToFile =FALSE,filename="efwCentiles.csv")
   rownames(data)=data$mid
   origdata=data
 
-  data$Sex=as.character(data$Sex)
-  data$Race=as.character(data$Race)
+  data$Sex=toupper(as.character(data$Sex))
+  data$Race=toupper(as.character(data$Race))
   data$GA=as.numeric(as.character(data$GA))/7
   data$wt=as.numeric(as.character(data$wt))
   data$ht=as.numeric(as.character(data$ht))
@@ -140,7 +140,7 @@ CentEFWR<- function (data,saveToFile =FALSE,filename="efwCentiles.csv")
 
   }
 
-  if(any(!data$Race %in% c("White","Black","Hispanic","Asian","")))
+  if(any(!data$Race %in% toupper(c("White","Black","Hispanic","Asian",""))))
   {
 
     stop("Race should be White, Black, Hispanic, Asian  or left blank")
@@ -148,13 +148,15 @@ CentEFWR<- function (data,saveToFile =FALSE,filename="efwCentiles.csv")
 
 
 
-  if(any(!data$Sex %in% c("Male","Female","")))
+  if(any(!data$Sex %in% c("MALE","FEMALE","")))
   {
 
     stop("Sex should be Male, Female or left blank")
   }
 
-
+  data$Sex=ifelse(data$Sex=="MALE","Male",ifelse(data$Sex=="FEMALE","Female",""))
+  data$Race=ifelse(data$Race=="WHITE","White",ifelse(data$Race=="BLACK","Black",
+ ifelse(data$Race=="HISPANIC","Hispanic",ifelse(data$Race=="ASIAN","Asian",""))))
 
 
   datasafe =data
